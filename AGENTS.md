@@ -13,7 +13,7 @@ Compose-связка PostgreSQL, backend и frontend; Generation Agent имее�
 
 - Изменения сервисов, проектов, labels, ports, volumes и health checks согласовывай с launcher и клиентами.
 - PostgreSQL доступен внутри сети как postgres:5432 и не публикуется на хосте.
-- Backend обращается к Generation Agent через host.docker.internal.
+- На Windows backend обращается к Generation Agent через host.docker.internal. Linux-лаунчер подключает оба Compose-проекта к общей сети и использует имя сервиса generation-agent.
 - Обычная остановка сохраняет данные; не добавляй -v к docker compose down.
 - Не коммить credentials, реальные env-файлы, дампы и локальные пользовательские пути.
 - Dockerfile приложения хранится в репозитории соответствующего компонента.

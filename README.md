@@ -98,8 +98,11 @@ docker compose ps
 ```
 
 Backend автоматически применяет миграции Liquibase; отдельно создавать таблицы не нужно.
-Для AI-оценки вакансий backend обращается к локальному Generation Agent через
+Для AI-оценки вакансий на Windows backend обращается к Generation Agent через
 `host.docker.internal`; выбранный лаунчером `GENERATION_PORT` передаётся в `infra.env` автоматически.
+На Linux лаунчер добавляет Compose override: оба проекта используют сеть инфраструктуры,
+а backend обращается к Generation Agent по имени сервиса. Порт Generation Agent на хосте
+по-прежнему привязан только к `127.0.0.1`.
 После запуска адреса по умолчанию из `.env.example`:
 
 - frontend: [http://localhost](http://localhost);

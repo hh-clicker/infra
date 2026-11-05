@@ -1,0 +1,10 @@
+services:
+  backend:
+    environment:
+      GENERATION_AGENT_URL: http://generation-agent:17374
+    networks:
+      - default
+      - generation
+
+networks:
+  generation: {}
