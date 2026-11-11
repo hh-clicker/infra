@@ -3,7 +3,11 @@
 Инструкция для coding agents: [AGENTS.md](AGENTS.md).
 
 Каталог содержит общую инфраструктуру проекта. Dockerfile каждого приложения остаётся в его собственном репозитории.
-Инструкция рассчитана на Windows и команды в PowerShell 7. Browser Agent запускается на Windows-хосте,
+Готовые пакеты для Windows, Linux и macOS устанавливаются через лаунчер — см.
+[руководство пользователя](https://github.com/hh-clicker/.github/blob/master/profile/README.md).
+Эта инструкция описывает ручной запуск из checkout на Windows и команды в PowerShell 7;
+для Linux см. [отдельную инструкцию](https://github.com/hh-clicker/launcher/blob/master/LINUX.md#запуск-без-лаунчера-из-исходников).
+Browser Agent запускается на desktop-хосте,
 backend/frontend/PostgreSQL — через этот Compose, generation-agent — через отдельный Compose.
 
 ## Зависимости Windows и установка
@@ -50,6 +54,7 @@ wsl --list --verbose
   Запустите установщик, оставьте компоненты npm и добавление в PATH. Node нужен именно в Windows,
   а не только внутри WSL. Совместимость с 22.x начинается с 22.18; для общей инструкции используем 24.x.
 - **Google Chrome** — установите обычную стабильную версию по [инструкции Google](https://support.google.com/chrome/answer/95346?hl=ru).
+  После новой установки один раз откройте Chrome вручную и завершите первоначальную настройку.
   Агент использует системный Chrome с отдельным профилем. Скачивать Chromium через `playwright install` для обычного запуска не нужно.
 - **Git for Windows** — для получения и обновления репозиториев. Установщик доступен на [сайте Git](https://git-scm.com/install/windows), либо:
 
