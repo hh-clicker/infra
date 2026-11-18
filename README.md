@@ -182,3 +182,8 @@ docker compose down
 в `hh-clicker-generation_codex-home`, задачи генератора — в `hh-clicker-generation_generation-data`.
 Профили HH находятся в `%LOCALAPPDATA%\HH Clicker\data\browser-agent\profiles` на Windows.
 Для обычного перезапуска удалять эти данные не нужно. **Не добавляйте `-v` к `docker compose down`: это удалит volumes соответствующего проекта.**
+
+## License
+
+HH Clicker original code and documentation are licensed under the [MIT License](LICENSE).
+Third-party components retain their own licenses and notices.
